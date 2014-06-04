@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <title>PayAnywhere Simplified Enrollment</title>
+	
+    <!-- Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700%7CPT+Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+    <!-- Style Sheets -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/default-grid.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet"> 
+    <link href="css/bootstrapValidator.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+
+  </head>
+  <body> 
+  
+    
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalStart">
+     sign up
+    </button>
+    
+    
+    
+    
+    
+    
+    
+  <div class="modal fade" id="modalStart">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      
+     
+ 
+   
+      <div class="modal-body modalStart">
+            <div class="col-md-12 form-group">             <button type="button" class="close" data-dismiss="modal" onClick="javascript:modalClose('modal');" >&times; close</button> </div>
+                       <div class="col-md-12 form-group">  
+    <h1 class="modal-title">Get started in minutes.</h1>
+  		   </div>
+        <form id="emailForm" class="form-horizontasl">
+   
+             <div class="col-md-12"> 
+              <div class="form-group">
+                <label class="control-label">Email Address</label>
+                <input class="form-control" name="email" type="email" id="email" data-bv-emailaddress-message="The value is not a valid email address" />
+                </div>
+            </div>
+            
+            
+       <div class="col-md-12 "> 
+           <div class="form-group password-a">
+             <label class="modalStart password-a-label control-label">Password</label>
+             <input type="password" class="password-a form-control" name="password" id="password"/>
+            </div>
+        </div>
+    	<div class="col-md-12">
+          <div class="form-group">
+        	 <div class="passwordConfirm">
+            <label class="modalStart  control-label">Confirm password</label>
+            <input type="password" class="form-control" name="confirmPassword" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 ">
+        <div class="form-group">
+              <input class="form-control checkbox-white" id="agreement" name="readAgreement" value="readAgreement" type="checkbox">
+             <label class="control-label checkbox checkbox-white"> I've read and agree with the <a href="terms.html" target="_blank" class="text-cyan">Terms of Use</a> </label>
+             </div>
+   		</div>
+         
+	
+    <div class="clear"></div>
+	</div>
+     
+      <div class="modal-footer footer-center">
+        <input type="hidden" id="emailDup" value="0" />
+        <button type="submit" class="btn btn-primary" onclick="javascript:modalStart(true);">Continue</button>
+        </form>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+    
+    
+    
+		<div class="modal fade" id="emailInUse">
+			<div class="modal-dialog modal-emailInUse">
+				<div class="modal-content">
+					
+					<div class="modal-body">
+						<h1 class="modal-title">Email already in use.</h1>
+						<p>This email is linked to an existing PayAnywhere account. To apply for an addtional account with this email address, select "Add Account". Accounts using the same email address will be linked together in PayAnywhere Inside. To apply for an additional account with a different email address, select "Cancel".</p>
+                      
+					</div>
+					<div class="modal-footer">
+                    <div class="row">
+						<div class="col-md-6">
+							<button type="submit" data-dismiss="modal"  class="btn btn-primary" onClick="javascript:cancel('modalStart');">Cancel</button>
+                        </div>
+                        <div class="col-md-6">
+							<button type="submit" data-dismiss="modal"  class="btn btn-primary" onClick="javascript:addAccount('modalStart');">Add Account</button>
+						</div>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+    
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery-ui_1.10.4.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/bootstrapValidator.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/start.js"></script>
+  </body>
+</html>

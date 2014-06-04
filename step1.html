@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+<title>PayAnywhere Simplified Enrollment</title>
+<!-- Fonts -->
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700%7CPT+Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+<!-- Style Sheets -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/default-grid.css" rel="stylesheet">
+<link href="css/bootstrapValidator.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+<!--START: REMOVE STYLES AND COMBINE-->
+<style>
+.agent-direct {
+	display: none;
+}
+.useBusiness {
+	display: none;
+}
+.validZip {
+	display: none;
+}
+.validAddress {
+	display: none;
+}
+.corpVSpersonal {
+	display: none;
+}
+.radioboxes {
+	display: none;
+}
+#verifyIdentity {
+	display: none;
+}
+.outOfStock {
+	display: none;
+}
+</style>
+<!--END: REMOVE STYLES AND COMBINE-->
+</head>
+<body>
+<header class="navbar-fixed-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 col-md-offset-7"> <span class="step1of3"></span> </div>
+    </div>
+  </div>
+</header>
+<div id="step1">
+  <div class="container">
+    <form id="applyStep1" role="form">
+      <fieldset>
+        <div class="row row-thin agent-direct">
+          <div class="col-md-12">
+            <div class="text-right">
+              <h3>Agent Name</h3>
+              <p class="agentPhone">248-555-1212</p>
+            </div>
+          </div>
+        </div>
+        <div class="row row-thin agent-direct">
+          <div class="col-md-12">
+            <h1>Create an account.</h1>
+          </div>
+        </div>
+        <div class="row agent-direct">
+          <div class="form-group col-md-4">
+            <label class="control-label">Email Address</label>
+            <input required type="text" class="form-control step1"  name="email" id="email" />
+          </div>
+          <div class="form-group password-a col-md-4">
+            <label class="  password-a-label control-label">Password</label>
+            <input required type="password" class="password-a form-control step1" name="password" id="password" />
+          </div>
+          <div class="form-group col-md-4">
+            <label class="control-label">Confirm Password</label>
+            <input required type="password" class="form-control step1"  name="confirmPassword" id="passwordConfirm" />
+          </div>
+        </div>
+        <div class="row agent-direct">
+          <div class="col-md-12 ">
+            <div class="form-group">
+              <input class="form-control checkbox-white" id="agreement" name="readAgreement" value="readAgreement" type="checkbox">
+              <label class="control-label checkbox checkbox-white"> I've read and agree with the <a href="terms.html" target="_blank" class="text-cyan">Terms of Use</a> </label>
+            </div>
+          </div>
+          <hr />
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h1>How will you use PayAnywhere?</h1>
+          </div>
+        </div>
+        <div class="row row-thin">
+          <div class="col-md-4">
+            <label>What is your industry?</label>
+            <select required id="useIndustry" class="col-md-12  form-control">
+              <option value="" disabled selected>Select</option>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+              <option value="4">Option 4</option>
+              <option value="5">Option 5</option>
+            </select>
+            <div class="useBusiness">
+              <label>What best describes your business?</label>
+              <select required id="useBusiness" class="col-md-12  form-control">
+                <option value="" disabled selected>Select</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+                <option value="5">Option 5</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-5 col-md-offset-3 products">
+            <label>Select Product</label>
+            <div class="productMobile">
+              <div class="radioboxes">
+                <input required class="radioBlack step1" id="productMobileBlack" name="products" value="Mobile - black" type="radio">
+                <label for="productMobileBlack" class="radioBlackLabel"></label>
+                <input required class="radioWhite step1" id="productMobileWhite" name="products" value="Mobile - white" type="radio">
+                <label for="productMobileWhite" class="radioWhiteLabel"></label>
+              </div>
+              <div class="outOfStock"> will ship in 2-3 business days </div>
+            </div>
+            <div class="productStorefront">
+              <div class="radioboxes">
+                <input required class="radioBlack step1" id="productStorefrontBlack" name="products" value="Storefront - black" type="radio">
+                <label for="productStorefrontBlack" class="radioBlackLabel"></label>
+                <input required class="radioWhite step1" id="productStorefrontWhite" name="products" value="Storefront - white" type="radio">
+                <label for="productStorefrontWhite" class="radioWhiteLabel"></label>
+              </div>
+              <div class="outOfStock"> will ship in 2-3 business days </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 col-md-offset-7"> </div>
+          <div class="col-md-2 "> </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5 col-md-offset-7">
+            <input class="form-control checkbox-white alreadyHave" id="alreadyHave" name="alreadyHave" value="alreadyHave - both" type="checkbox">
+            <label class="control-label checkbox checkbox-white alreadyHave">I already have a reader. </label>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="row">
+        <hr />
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h1>All about you.</h1>
+          </div>
+        </div>
+        <div class="row-fluid row-thin bodySection">
+          <div class="col-md-10 col-no-padding">
+            <div class="row row-thin">
+              <div class="form-group col-md-5">
+                <label>First Name</label>
+                <input required class="form-control step1" name="fName" id="fName" type="text" placeholder="">
+              </div>
+              <div class="form-group col-md-5">
+                <label>Last Name</label>
+                <input required class="form-control step1" name="lName" id="lName" type="text" placeholder="">
+              </div>
+            </div>
+            <div class="row row-thin">
+              <div class="form-group col-md-5">
+                <label>Home Address</label>
+                <input required class="form-control step1" name="addressHome" id="addr1" type="text" placeholder="">
+              </div>
+              <div class=" col-md-2">
+                <label>Suite/Apt</label>
+                <input  class="form-control step1" name="suiteApt" id="addr2" type="text" placeholder="">
+              </div>
+              <div class=" col-md-2">
+                <div class="form-group">
+                  <label>Zip Code</label>
+                  <input required class="form-control step1" name="zip" type="text" id="zipcode" onKeyPress="return isInt(event);step1();" maxlength="9" placeholder="">
+                </div>
+              </div>
+            </div>
+            <div class="row row-thin">
+              <div class="form-group col-md-5">
+                <div class="validZip">
+                  <label>City</label>
+                  <input required class="form-control step1" id="city" type="text" >
+                </div>
+              </div>
+              <div class="form-group col-md-4">
+                <div class="validZip">
+                  <div class=" form-group col-md-12 col-no-padding">
+                    <label>State</label>
+                    <select required class="state form-control step1" id="state">
+                      <option value="" disabled selected>Select</option>
+                      <option value="MI">Michigan</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-no-padding">
+            <div class="row row-thin">
+              <div class="col-md-12 col-no-padding">
+		    	<div class="form-group">
+                <div id="telePhone" class="">
+                  <label>Primary Phone</label>
+                  <input class="form-control pPhone step1" name="pPhone" id="phone" type="text">
+                </div>
+               </div>
+			<div class="form-group">
+                  <label>Last 4 Digits of SSN</label>
+                  <input  class="form-control step1" name="last4SSN" type="password" onKeyPress="return isInt(event);" maxlength="4" id="last4SSN" >
+                </div>
+                <div class="form-group">
+                  <label>Birthday</label>
+                  <input required class="form-control bDate step1" name="Birthday" id="bday" placeholder="mm-dd-yyyy" type="text" >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" id="verifyIdentity">
+          <hr>
+          <div class="col-md-6">
+            <h1>We can't find you!</h1>
+            <p class="has-error-text">We were unable to verify your identity with the information  provided.<br />
+              Please enter your full nine digit Social Security Number.</p>
+            <div class="form-group">
+              <label class="control-label">Social Security Number</label>
+              <input class="form-control fullSSN" name="fullSSN" type="text" placeholder="">
+            </div>
+          </div>
+          <div class="col-md-12"> </div>
+        </div>
+        
+        <div class="validAddress">
+          <hr />
+          <div class="row confirmIdentity">
+            <div class="col-md-12">
+              <h1>Confirm your identity.</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label class="option1">Which street have you lived on?</label>
+                <select class="form-control step1" id="option1">
+                  <option value="" disabled selected>Select</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label class="option2">Which of the following people do you know?</label>
+                <select required class="form-control step1" id="option2">
+                  <option value="" disabled selected>Select</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label class="option3"></label>
+                <select required class="form-control step1" id="option3">
+                  <option value="" disabled selected>Select</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+        <hr />
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-md-offset-9">
+            <button type="submit" class="btn btn-primary btn-right" onClick="javascript:step1(true);">continue</button>
+          </div>
+        </div>
+        <input type="hidden" id="emailDup" value="0" />
+        <input type="hidden" id="agent" value="" />
+      </fieldset>
+    </form>
+  </div>
+</div>
+<div class="modal fade" id="emailInUse">
+  <div class="modal-dialog modal-emailInUse">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h1 class="modal-title">Email already in use.</h1>
+        <p>This email is linked to an existing PayAnywhere account. To apply for an addtional account with this email address, select "Add Account". Accounts using the same email address will be linked together in PayAnywhere Inside. To apply for an additional account with a different email address, select "Cancel".</p>
+      </div>
+      <div class="modal-footer">
+      
+       <div class="row-fluid">
+            <div class="col-md-6">
+                  <button type="button" data-dismiss="modal"  class="btn btn-primary" onClick="javascript:cancel('');">Cancel</button>
+            </div>
+            <div class="col-md-6">
+                    <button type="button" data-dismiss="modal"  class="btn btn-primary" onClick="javascript:addAccount('');">Add Account</button>
+            </div>
+ 	  </div>
+      
+      
+    
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/jquery-1.11.1.min.js"></script> 
+<script src="js/jquery-ui_1.10.4.js"></script> 
+<script src="js/bootstrap.js"></script> 
+<script src="js/bootstrapValidator.js"></script> 
+<script src="js/common.js"></script> 
+<script src="js/jquery.mask.min.js"></script> 
+<script src="js/step1.js"></script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+	<title>PayAnywhere Simplified Enrollment</title>
+	<!-- Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700%7CPT+Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+	<!-- Style Sheets -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/default-grid.css" rel="stylesheet">
+	<link href="css/bootstrapValidator.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+<!--START: REMOVE STYLES AND COMBINE-->
+<style>
+.useBusiness{display:none;}
+.validZip{display:none;}
+.validAddress{display:none;}
+.corpVSpersonal{display:none;}
+</style>
+<!--END: REMOVE STYLES AND COMBINE-->
+	</head>
+	<body>
+		<header class="navbar-fixed-top">
+           <div class="container">
+              <div class="row">
+                <div class="col-md-5 col-md-offset-7">
+                <span class="step2of3"></span>
+                </div>
+               </div>
+            </div>
+        </header>
+		<div id="step2">
+			<div class="container">
+				<form id="applyStep2">
+					<fieldset>
+						<div class="row">
+                          <div class="col-md-12">
+							<h1>Let's get down to business.</h1>
+                            </div>
+                         </div>
+                         
+                         <div class="row">
+							<div class="col-md-4">
+                            <div class="form-group">
+								<label>Estimated Monthly Credit Card Sales</label>
+								<select name="monthlySales" required class="form-control step2" id="monthlySales">
+									<option value="" disabled selected>Select...</option>
+									<option>Option 1</option>
+									<option>Option 2</option>
+									<option>Option 3</option>
+									<option>Option 4</option>
+									<option>Option 5</option>
+								</select>
+                                </div>
+                                </div>
+                                <div class="col-md-4">
+                             <div class="form-group">
+								<label>Estimated Average Sale Amount</label>
+								<select name="avgTicket" required class="form-control step2" id="avgTicket">
+									<option value="" disabled selected>Select...</option>
+									<option>Option 1</option>
+									<option>Option 2</option>
+									<option>Option 3</option>
+									<option>Option 4</option>
+									<option>Option 5</option>
+								</select>
+								</div>
+                               </div>
+                        </div> 
+                        <div class="row">    
+                           <div class="corpVSpersonal col-md-4">
+                                <div class="form-group">
+								<label>Legal Business Name <span class="text-gray">(registered name with the IRS)</span></label>
+								<input required name="legalBizName" class="form-control step2" id="legalBizName"  type="text">
+                                </div>
+							</div>
+                            
+							<div class="corpVSpersonal col-md-4">
+                                <div class="form-group">
+									<label>Federal Tax ID / EIN <span class="text-gray">(ID number provided by the IRS)</span></label>
+									<input required name="fedTaxIdEin" class="form-control fedTaxIdEin step2" id="fedTaxIdEin" type="text" onKeyPress="return isInt(event);" placeholder="">
+                                    </div>
+								
+							</div>
+						</div>
+                         <div class="row">    
+                           <div class="corpVSpersonal col-md-4">
+                                <div class="form-group">
+								<label>DBA Name <span class="text-gray">(the name your customers see)</span></label>
+								<input required name="DBAName" class="form-control step2" id="DBAName"  type="text" >
+                                </div>
+							</div>
+                            
+							<div class="corpVSpersonal col-md-4">
+                                <div class="form-group">
+									<label>Business Website Address</label>
+									<input required name="bizSite" class="form-control step2"  id="bizSite" type="text"  placeholder="http://">
+                                    </div>
+								
+							</div>
+						</div>
+                        
+						<div class="corpVSpersonal">
+                        <div class="row">
+							<hr />
+                            </div>
+							<div class="row">
+							
+								<div class="col-md-12">
+									
+										<input type="checkbox" id="sameAsHome"  class="form-control step2"><label class="control-label checkbox">My Business is the same as my Home Address</label>
+								
+								</div>
+							</div>
+							<div class="row row-thin">
+								
+								<div class="col-md-4">
+                                 <div class="form-group">
+									<label>Business Address</label>
+									<input name="bizAddr1" required class="form-control  step2"  id="bizAddr1" type="text" placeholder="">
+                                    </div>
+									<div class="validZip">
+                                      <div class="form-group">
+										<label>City</label>
+										<input name="bizCity" required class="form-control  step2" id="bizCity" type="text" placeholder="">
+                                       </div>
+									</div>
+                                  </div>
+								
+								<div class="col-md-4">
+									<div class="row-fluid row-thin">
+										<div class="col-md-6">
+                                         <div class="form-group">
+											<label>Suite/Apt</label>
+											<input name="bizAddr2" class="form-control  step2"  id="bizAddr2" type="text" placeholder="">
+                                            </div>
+										</div>
+										<div class="col-md-6">
+                                         <div class="form-group">
+											<label>Zip Code</label>
+											<input name="bizZip" required class="form-control  step2"  id="bizZip" onKeyPress="return isInt(event);step2();" maxlength="9" type="text" placeholder="">	
+                                            </div>
+										</div>
+										<div class="validZip">
+                                          <div class="form-group">
+											<label>State</label>
+											<select  required   id="bizState" class="form-control  step2">
+												<option value="" disabled selected>Select</option>
+												<option value="MI">Michigan</option>
+											</select>
+                                            </div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+                        <div class="row">
+						<hr />
+                        </div>
+						<div class="row">
+                          <div class="col-md-12">
+							<h1>Where should we deposit your money?</h1>
+                          </div>
+                       </div>
+                       <div class="row">  
+                       <div class="col-md-8">
+					 		<div class="row-fluid row-thin">
+									<div class="col-md-12 col-no-padding">
+									  <input required type="checkbox" id="skipStep2" value="" class="step2"><label>I’ll skip this step and complete later.</label>
+									</div>
+							</div>
+						<div class="row-fluid">
+									<div class="col-md-6 col-no-padding">
+                                     <div class="form-group">
+										<label>ACH or Routing Number (ACH Preferred)</label>
+										<input  name="achRouting" required class="step2 form-control" id="achRouting"  type="text">
+                                        </div>
+									</div>
+									<div class="col-md-6 col-no-padding">
+                                     <div class="form-group">
+										<label>Account Number</label>
+										<input name="acctNum" required class="step2 form-control" id="acctNum"  type="text" >
+                                        </div>
+									</div>
+								</div>
+								<div class="row-fluid">
+									<div class="col-md-12 col-no-padding">
+								<p>Funds are usually deposited within one business day of transaction.</p>
+                                </div>
+                              </div>  
+						  </div>
+                       
+                        
+							<div class="col-md-4 check-image">
+								<img alt="check" src="images/check-guide.png">
+							</div>
+					 </div>
+                     <div class="row">
+                 
+						<hr />
+					</div>
+
+                                <div class="row">
+                                  <div class="col-md-3 col-md-offset-9">
+                                <button type="submit" class="btn btn-right btn-primary" onClick="javascript:step2(true);">continue</button>
+                                  </div>
+                                </div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/jquery-ui_1.10.4.js"></script>
+		<script src="js/jquery.mask.min.js"></script> 
+		<script src="js/bootstrap.js"></script>
+		<script src="js/bootstrapValidator.js"></script>
+		<script src="js/common.js"></script>
+       
+		<script src="js/step2.js"></script>
+	</body>
+</html>

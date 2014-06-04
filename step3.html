@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+	<title>PayAnywhere Simplified Enrollment</title>
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700%7CPT+Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/default-grid.css" rel="stylesheet">
+	<link href="css/bootstrapValidator.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+<!--START: REMOVE STYLES AND COMBINE-->
+<style>
+.useBusiness{display:none;}
+.validZip{display:none;}
+.validAddress{display:none;}
+.corpVSpersonal{display:none;}
+.paymentInfo{display:none;}
+#mobile{display:none;}
+#storefront{display:none;}
+.editShipping{display:none;}
+#noReader{display:none;}
+</style>
+<!--END: REMOVE STYLES AND COMBINE-->
+	</head>
+	<body>
+		<header class="navbar-fixed-top">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-5 col-md-offset-7">
+                <span class="step3of3"></span>
+                
+                </div>
+               </div>
+            </div>
+        </header>
+		<div id="step3">
+			<div id="mobile">
+				<div class="container">
+				   <form name="applyStep3" id="applyStep3_mobile">
+					<fieldset>
+						<div class="row reader">
+							<div class="col-md-12 col-no-padding">
+								<h1>It's coming!</h1>
+								<p>Your free PayAnywhere reader is on its way, and an email with your approval status will be arriving shortly.  Be sure to check your spam folder if you don’t see it.</p>
+							</div>
+						</div>
+						<div class="row reader">
+							<div class="col-md-12 confirmAddress">
+								<p class="text-cyan">Your equipment will be shipped to:</p>
+								<p><span class="firstLastName"></span><br />
+									<span class="address"></span><br />
+									<span class="cityStateZip"></span></p>
+							</div>
+						</div>
+						<div class="row reader">
+							<div class="col-md-12 col-no-padding">
+								<a class="btn btn-inverse" onClick="javascript:editShipping();">Edit Shipping Address</a>
+							</div>
+						</div>
+                           <div class="row">
+						<hr />
+                        </div>
+						<div class="editShipping">
+							<div class="row">
+								<div class="col-md-12">
+									<h1>Edit shipping information.</h1>
+								</div>
+							</div>
+                            
+                            
+                            
+							<div class="row row-thin">
+								<div class="col-md-4">
+                                	<div class="form-group">
+									<label>First Name</label>
+									<input required class="step3 form-control" id="fName" type="text" placeholder="" />
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4">   
+                                    <div class="form-group">
+                                    <label>Last Name</label>
+									<input required  class="step3 form-control"  id="lName" type="text" placeholder="" />
+                                    </div>
+                                </div>    
+                            </div>
+                            <div class="row row-thin">
+                             <div class="col-md-4">
+                                <div class="form-group"> 
+									<label>Shipping Address</label>
+									<input  required class="step3 form-control" type="text" id="addr1" />
+                                 </div>
+                              </div>
+                            <div class="col-md-4">
+                                    <div class="col-md-6">
+                                    <div class="form-group"> 
+                                        <label>Suite/Apt</label>
+                                        <input required  class="step3 form-control"  id="addr2" type="text" placeholder="" />
+                                    </div>
+                                </div>
+                                
+                                    <div class="col-md-6">
+                                    <div class="form-group"> 
+                                        <label>Zip Code</label>
+                                        <input required  class="step3 form-control"  type="text" id="zipcode" onKeyPress="return isInt(event);" maxlength="9" placeholder="" />
+                                    </div>
+                                  </div> 
+                           </div>
+                         </div>  
+                         <div class="row row-thin">  
+                         <div class="col-md-4">      
+                           <div class="validZip">
+                            <div class="form-group">
+										<label>City</label>
+										<input class="step3 form-control" id="city" type="text" placeholder="" />
+								</div>
+							</div>
+                          </div>
+                          <div class="col-md-4">
+							<div class="validZip">
+                             <div class="form-group">
+											<label>State</label>
+											<select required  class="state step3 form-control" id="state">
+												<option value="">Select</option>
+												<option value="MI">Michigan</option>
+											</select>
+										</div>
+									</div>
+								</div>
+                                
+							</div>
+                             <div class="row">
+							<hr />
+                            </div>
+						</div>
+                        
+            
+
+                                 <div class="row">
+                                  <div class="col-md-3 col-md-offset-9">
+                                	<button class="btn btn-primary btn-right" onClick="javascript:step3(true);return false;">Done</button>
+                                  </div>
+                                </div>
+					</fieldset>
+				</form>
+			   </div>
+			</div>
+			<div id="storefront">
+				<div class="container">
+					<form id="applyStep3_storefront">
+						<fieldset>
+							<div class="row">
+								<div class="col-md-12">
+									<h1> Watch your inbox!</h1>
+									<p>An email with your PayAnywhere approval status will be arriving shortly. Be sure to check your spam folder if you don't see it. Upon approval, your equipment will be shipped to your business address.</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<h1>Would you like to add optional additional equipment?</h1>
+									<!-- <p class="text-cyan">View equipment specifications</p>  -->
+								</div>
+						   </div>
+						  <div class="row">
+								<div class="col-md-3">
+									<div class="equip-printer">
+										<span class="optionCheck"></span>
+										<h2>Receipt Printer</h2>
+										<div class="equipOptions printerOptions">
+											<input required class="input-medium radioEquipment step3"  disabled id="equipmentPrinterRent" name="equipmentChoice" value="Receipt Printer Rent" type="radio">
+											<label class="control-label" for="equipmentPrinterRent">   Rent<br /><span class="text-sub">$14.95 per Month</span></label>
+                                            	<div class="hide">
+											<input required class="input-medium radioEquipment step3" id="equipmentPrinterPurchase" name="equipmentChoice" value="Receipt Printer Purchase" type="radio" >
+											<label for="equipmentPrinterPurchase">     Purchase<br /><span class="text-sub">$260.00</span></label>
+                                            </div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="equip-drawer">
+										<span class="optionCheck"></span>
+										<h2>Receipt Printer + Cash Drawer</h2>
+										<!-- prices may need to corrected for this block -->
+										<div class="equipOptions drawerOptions">
+											<input required class="input-medium radioEquipment step3" id="equipmentDrawerRent" name="equipmentChoice" value="Receipt Printer and Drawer Rent" type="radio">
+											<label for="equipmentDrawerRent">Rent<br /><span class="text-sub">$19.95 per Month</span></label>
+                                            	<div class="hide">
+											<input required class="input-medium radioEquipment step3" id="equipmentDrawerPurchase" name="equipmentChoice" value="Receipt Printer and Drawer Purchase" type="radio" >
+											<label for="equipmentDrawerPurchase">Purchase<br /><span class="text-sub">$260.00</span></label>
+                                            </div>
+										</div>
+									</div>
+								</div>
+							</div>
+					   <div class="row">
+							<hr />
+                            </div>
+							<div class="paymentInfo">
+								<div class="row">
+									<div class="col-md-4">
+										<h1>Payment Information.</h1>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-4">
+                                    <div class="form-group">
+										<label class="control-label">Name on Card</label>
+										<input required class="step3 form-control" name="name" id="name" type="text" placeholder="">
+                                        </div>
+									</div>
+									<div class="col-md-4">
+                                    <div class="form-group">
+										<label>Credit Card Number</label>
+										<input required class="step3 form-control "  name="ccNum" id="ccNum" onKeyPress="return isInt(event);" maxlength="16" type="text" placeholder="">
+                                        </div>
+									</div>
+									<div class="col-md-4">
+										<div class="row-fluid row-thin">
+                                        <div class="form-group">
+											<div class="col-md-8 col-expDate col-no-padding">
+                                           
+												<label>Expiration</label>
+												<select required class=" step3" id="expMonth">
+													<option value="">Select</option>
+													<option value="1">Option 1</option>
+													<option value="2">Option 2</option>
+													<option value="3">Option 3</option>
+													<option value="4">Option 4</option>
+													<option value="5">Option 5</option>
+												</select>
+                                 
+                                            	
+												<select required class=" step3" id="expYear">
+													<option value="">Select</option>
+													<option value="1">Option 1</option>
+													<option value="2">Option 2</option>
+													<option value="3">Option 3</option>
+													<option value="4">Option 4</option>
+													<option value="5">Option 5</option>
+												</select>
+											</div>
+                                            </div>
+                                            <div class="form-group">
+											<div class="col-md-3 col-no-padding">
+                                            
+												<label>CVV</label>
+												<input required class="input-mini step3 form-control" name="cvv" id="cvv" type="text" onKeyPress="return isInt(event);" maxlength="3" placeholder="">
+											</div>
+                                           </div>
+										</div>
+									</div>
+								</div>
+								<div class="row row-thin">
+									<div class="col-md-3 matchAddress">
+										<p>My Billing Address is the same as my:</p>
+									</div>
+									<div class="col-md-2" id="homeAddr">
+										<input required class="sameAddress form-control step3 checkbox" id="sameHomeAdd" name="sameAddress" value="show Home Address" type="checkbox">
+										<label for="sameHomeAdd">Home Address</label>
+									</div>
+									<div class="col-md-2" id="bizAddr">
+										<input required class="sameAddress form-control step3 checkbox" id="sameBizAdd" name="sameAddress" value="show business Address" type="checkbox">
+										<label for="sameBizAdd">Business Address</label>
+									</div>
+								</div>
+                                
+                                
+								<div class="row">
+									<div class="col-md-4">
+										<label>Billing Address</label>
+										<input class="form-control step3" type="text" required id="addr1">
+										<div class="validZip">
+											<label>City</label>
+											<input required class="form-control step3"  id="city" type="text">
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="row-fluid row-thin">
+											<div class="col-md-6">
+												<label>Suite/Apt</label>
+												<input required class="form-control step3"  id="addr2" type="text">
+											</div>
+											<div class="col-md-6">
+												<label>Zip Code</label>
+												<input required class="form-control step3" type="text" id="zipcode" onKeyPress="return isInt(event);" maxlength="9" placeholder="">
+											</div>
+											<div class="validZip">
+												<label>State</label>
+												<select required class="state step3" id="state">
+													<option value="">Select</option>
+													<option value="MI">Michigan</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+                                <div class="row"> 
+								<hr />
+                                </div>
+							</div>
+                            <div class="row">
+							 <div class="col-md-3 col-md-offset-9">
+								<input type="hidden" class="prodType" value="" />
+								<button type="submit" class="btn btn-primary btn-right" onClick="javascript:step3(true);return false;">Done</button>
+							</div>
+                            </div>
+						</fieldset>
+					</form>
+				</div>
+			   </div>
+			</div>
+		
+		<div id="noReader">
+			<div class="container">
+				<div class="row noReader">
+					<div class="col-md-12">
+						<h1>It's coming!</h1>
+						<p>Thanks for signing up with PayAnywhere! An email with your approval status will be arriving shortly. Be sure to check your spam folder if you don't see it.</p>
+					</div>
+				</div>
+                   <div class="row">
+		    		<hr >
+                    </div>
+                    <div class="row">
+				 <div class="col-md-3 col-md-offset-9">
+					<input type="hidden" class="prodType" value="" />
+					<button type="submit" class="btn btn-primary btn-right" onClick="javascript:step3(true);return false;">Done</button>
+				</div>
+                </div>
+			</div>
+		</div>
+		<div class="modal fade" id="step3Confirm">
+			<div class="modal-dialog modal-step3Confirm">
+				<div class="modal-content">
+					<div class="modal-body">
+						<h1 class="modal-title">Thank you.</h1>
+						<p>A receipt will be emailed to you within 24 hours.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-right btn-primary" onClick="javascript:done('modal');">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/jquery-ui_1.10.4.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script src="js/bootstrapValidator.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/step3.js"></script>
+	</body>
+</html>
